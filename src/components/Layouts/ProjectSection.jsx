@@ -44,7 +44,7 @@ const projects = [
             {name: "TaildwindCSS"},
         ],
         image: "../image/porto.png",
-        live: "",
+        live: "https://arifbudisuryono.vercel.app/",
         github: "https://github.com/arifbudisuryono/rental_mobil",
     },
 ];
@@ -99,7 +99,7 @@ const ProjectSection = () => {
                                 < BsArrowUpRight size={25}/>
                             </div>
                             <Tooltip id="live-tooltip" place="top" delayShow={100} delayHide={100} style={{backgroundColor: "#ffff", color: "black",}}>
-                                Project
+                                Live Project
                             </Tooltip>
                         </Link>
                         )}

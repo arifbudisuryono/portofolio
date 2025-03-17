@@ -73,7 +73,7 @@ const HeroImage = () => {
       transition={{ delay: 2.3, duration: 0.4, ease: "easeIn" }}
       className="relative w-full flex justify-center"
       >
-        <img src="../image/hero.png" alt="" className="w-[60%]"/>
+        <img src="../image/hero.png" alt="" className="w-[210px] md:w-[430px] lg:w-[350px]"/>
         <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#1c1c22]/100 to-transparent"></div>
         <motion.svg
           className="absolute w-[250px] md:w-[500px] lg:w-[400px] h-[250px] md:h-[500px] lg:h-[400px]"

@@ -1,7 +1,7 @@
 import { FaReact, FaHtml5, FaCss3, FaLaravel, FaPhp } from "react-icons/fa"
 import { SiTailwindcss, SiJavascript, SiMysql } from "react-icons/si"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import "../../styles/custom.css";
 import { Tooltip } from "react-tooltip";
 import { motion } from "framer-motion";
 
@@ -90,9 +90,9 @@ const AboutSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.1, duration: 0.4, ease: "easeIn" }}
-        className="min-h-[80vh] flex items-center justify-center py-12 lg:py-0"
+        className="min-h-[80vh] overflow-auto flex items-center justify-center py-12 lg:py-0"
         >
-            <Tabs defaultValue="Skills" className="flex flex-col md:flex-row gap-[65px]">
+            <Tabs defaultValue="Skills" className="flex flex-col lg:flex-row flex-wrap gap-[65px]">
                 <div className="flex flex-col  mx-auto gap-4 min-w-[340px] max-w-[400px]">
                     <h2 className="text-4xl font-semibold">Why Hire me?</h2>
                     <p></p>
@@ -109,7 +109,7 @@ const AboutSection = () => {
                         <h1 className="text-4xl text-primary font-semibold">{experience[0].title}</h1>
                         <p>{experience[0].desc}</p>
                         <div className="h-[300px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-slate-800">
-                          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
+                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-[20px] ">
                             {experience[0].info.map((item, index) => {
                               return (
                                 <li key={index} className="bg-[#272748] h-[164px] py-6 px-10 rounded-lg flex flex-col justify-center gap-2 items-center lg:items-start mb-2">
@@ -133,7 +133,7 @@ const AboutSection = () => {
                         <h1 className="text-4xl text-primary font-semibold">{education[0].title}</h1>
                         <p>{education[0].desc}</p>
                         <div className="h-[300px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-slate-800">
-                          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
+                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
                             {education[0].info.map((item, index) => {
                               return (
                                 <li key={index} className="bg-[#272748] h-[164px] py-6 px-10 rounded-lg flex flex-col justify-center gap-2 items-center lg:items-start mb-2">
@@ -157,7 +157,7 @@ const AboutSection = () => {
                         <h1 className="text-4xl text-primary font-semibold">{skills[0].title}</h1>
                         <p>{skills[0].desc}</p>
                         <div className="h-[300px] overflow-y-auto scrollbar-thin scrollbar-thumb-primary scrollbar-track-slate-800">
-                        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-[20px]">
+                        <ul className="grid grid-cols-2 md:grid-cols-4 gap-[20px]">
                           {skills[0].info.map((item, index) => {
                             return (
                               <li key={index} className="">

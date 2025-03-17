@@ -6,6 +6,7 @@ import Home from "../../pages/Home";
 import About from "../../pages/About";
 import Project from "../../pages/Project";
 import Contact from "../../pages/Contact";
+import Notfound from "../../pages/Notfound404";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -27,6 +28,7 @@ const AnimatedRoutes = () => {
           <Route path="/about" element={<About />} />
           <Route path="/project" element={<Project />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Notfound />} />
         </Routes>
 
         <motion.div className="h-screen w-screen fixed bg-black top-0 pointer-events-none" 
