@@ -29,7 +29,7 @@ const HeroDesc = () => {
           <div className="px-6 border-1 border-slate-300 w-[10%] mx-auto mt-5 mb-2 lg:ml-0"></div>
           <p className="text-slate-300 lg:text-[20px]">I am passionate about creating engaging and interactive web interfaces. I am honing my skills in modern frontend technologies to build dynamic and innovative web applications.</p>
           <div className="flex justify-center lg:justify-start gap-4 mt-5">
-          <a href="https://drive.google.com/file/d/1FzVzSaOQrKvcfVHGaeTM3-yN0acX7KmT/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <a href="https://drive.google.com/file/d/1S7SnfaVmV8o5s7pqtmphzCpyUsQsvO9N/view?usp=sharing" target="_blank" rel="noopener noreferrer">
             <Button style="bg-primary flex items-center text-hitam font-semibold justify-center gap-x-1 w-[150px] md:w-[203px] hover:bg-[#37AFE1] transition-all duration-300">
             <span className="hidden md:block"><IoDocumentTextOutline size={20}/></span>
             <span>Download CV</span>
