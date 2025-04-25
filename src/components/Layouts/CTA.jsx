@@ -6,7 +6,7 @@ const CTAList = [
     {
         icon: <FaPhoneAlt size={20}/>,
         name: "phone",
-        contact: "(+62) 8564 42421 457"
+        contact: "(+62) 856 4242 1457"
     },
     {
         icon: <MdOutlineEmail size={20}/>,
@@ -16,7 +16,7 @@ const CTAList = [
     {
         icon: <FaMapMarkerAlt size={20}/>,
         name: "address",
-        contact: "Karangjati, kec. Kalijamber, kab. Sragen"
+        contact: "Sragen, Indonesia"
     }
 ]
 

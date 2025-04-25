@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const Header = () => {
-  const [ isOpen, setIsOpen ] = useState(false) ;
+  const [ isOpen, setIsOpen ] = useState(false);
   const location = useLocation();
   
   return (
