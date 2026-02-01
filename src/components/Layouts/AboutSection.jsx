@@ -66,6 +66,11 @@ const experience = [
         company: "PT. Media Sarana Digitalindo",
         duration: "Agustus 2024  - Januari 2025",
       },
+      {
+        position: "Fullstack Developer",
+        company: "PT. UnichemCandi Indonesia",
+        duration: "Juli 2025  - Now",
+      },
     ]
   }
 ];
