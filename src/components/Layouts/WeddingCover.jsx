@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import WeddingButton from '../Elements/WeddingButton';
 
-const WeddingCover = ({ namaTamu, targetSectionRef, isOpened, onOpen }) => {
+const WeddingCover = ({ namaTamu, isOpened, onOpen }) => {
   useEffect(() => {
     if (!isOpened) {
       document.body.style.overflow = 'hidden';
@@ -13,19 +13,16 @@ const WeddingCover = ({ namaTamu, targetSectionRef, isOpened, onOpen }) => {
     };
   }, [isOpened]);
 
-  const handleOpenInvitation = () => {
-    onOpen(); // Mengubah isOpened di file induk menjadi true
-
-    // Jeda 1 detik sebelum otomatis scroll ke bawah
-    setTimeout(() => {
-      if (targetSectionRef && targetSectionRef.current) {
-        targetSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 1000); 
-  };
+  // FUNGSI handleOpenInvitation DIHAPUS.
+  // Mengapa? Karena animasi scroll lambat (2.5 detik) yang kita buat sebelumnya 
+  // sudah ditangani sepenuhnya oleh fungsi onOpen() dari file induk. 
+  // Jika kode scroll lama dibiarkan di sini, animasinya akan bertabrakan!
 
   return (
-    <section className="relative flex flex-col items-center justify-end pb-[50px] md:pt-0 w-full min-h-screen text-center text-white bg-center bg-cover"
+    <section 
+      // PERUBAHAN 1: Ubah min-h-screen menjadi min-h-[100dvh] (Dynamic Viewport Height). Ini kunci untuk iOS!
+      // PERUBAHAN 2: Ubah pb-[50px] menjadi pb-[100px] atau pb-28 agar ada jarak aman yang ekstra di Android & iOS.
+      className="relative flex flex-col items-center justify-end pb-[100px] md:pb-[80px] w-full min-h-[100dvh] text-center text-white bg-center bg-cover"
       style={{ backgroundImage: 'url(/wedding/depan.png)' }}
     >
       {/* OVERLAY HITAM TRANSPARAN */}
@@ -44,8 +41,7 @@ const WeddingCover = ({ namaTamu, targetSectionRef, isOpened, onOpen }) => {
         </h1>
 
         {/* --- EFEK MENGHILANG --- */}
-        {/* Nama tamu dan tombol dibungkus div ini agar menghilang dengan halus saat tombol diklik */}
-        <div className={`flex flex-col items-center transition-all duration-1000 ease-in-out ${isOpened ? 'opacity-0 translate-y-10 pointer-events-none' : 'opacity-100 translate-y-0'}`}>
+        <div className={`flex flex-col items-center transition-all duration-1000 ease-in-out w-full ${isOpened ? 'opacity-0 translate-y-10 pointer-events-none' : 'opacity-100 translate-y-0'}`}>
           
           {/* BAGIAN TAMU */}
           <div className="mb-8">
@@ -58,7 +54,8 @@ const WeddingCover = ({ namaTamu, targetSectionRef, isOpened, onOpen }) => {
           </div>
 
           {/* TOMBOL */}
-          <WeddingButton onClick={handleOpenInvitation}>
+          {/* PERUBAHAN 3: onClick langsung menjalankan fungsi onOpen dari file induk */}
+          <WeddingButton onClick={onOpen}>
             <span className="text-xl">✉</span>
             Buka Undangan
           </WeddingButton>
