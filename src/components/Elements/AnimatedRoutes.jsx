@@ -7,6 +7,7 @@ import About from "../../pages/About";
 import Project from "../../pages/Project";
 import Contact from "../../pages/Contact";
 import Notfound from "../../pages/Notfound404";
+import WeddingUnduhMantu from '../../pages/WeddingUnduhMantu';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -28,6 +29,7 @@ const AnimatedRoutes = () => {
           <Route path="/about" element={<About />} />
           <Route path="/project" element={<Project />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/arif-indri-wedding" element={<WeddingUnduhMantu />} />
           <Route path="*" element={<Notfound />} />
         </Routes>
 
