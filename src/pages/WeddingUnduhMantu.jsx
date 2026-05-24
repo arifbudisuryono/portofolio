@@ -148,9 +148,7 @@ const WeddingUnduhMantu = () => {
             )}
 
           <div ref={nextSectionRef}>
-            <div className={`transition-all duration-[2800ms] ease-in-out ${isOpened ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <WeddingHero isOpened={isOpened} />
-            </div>
+            <WeddingHero isOpened={isOpened} />
             
             <div className="flex flex-col items-center justify-center px-8 py-24 text-center text-white bg-black">
               <AnimatedSection animation="zoom-in">
