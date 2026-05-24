@@ -98,7 +98,6 @@ const WeddingUnduhMantu = () => {
 
       <WeddingAudio isCoverOpened={isOpened} isVisible={hideCover} />
       
-      {/* PERUBAHAN: Background diganti jadi bg-black agar seragam */}
       <div className="flex w-full min-h-screen bg-black" style={{ margin: 0, padding: 0 }}>
         
         {/* --- SISI KIRI (FOTO BESAR) - STICKY / DIAM DI DESKTOP --- */}
@@ -108,7 +107,7 @@ const WeddingUnduhMantu = () => {
             height: '100vh', 
             position: 'sticky', 
             top: 0,
-            backgroundImage: 'url(/wedding/cover.jpg)', // PERUBAHAN: Hapus /public agar aman saat di-hosting
+            backgroundImage: 'url(/wedding/cover.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             alignItems: 'flex-end',
@@ -118,7 +117,6 @@ const WeddingUnduhMantu = () => {
         >
           <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.3)' }} />
           <div className="hidden lg:relative lg:text-left lg:text-white lg:block">
-            {/* PERUBAHAN: Menyesuaikan nama dan tanggal Ngunduh Mantu */}
             <h1 style={{ fontFamily: 'serif', fontSize: '4rem', margin: '10px 0' }}>Arif & Indri</h1>
             <p style={{ fontFamily: 'serif', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '1.2rem' }}>
               Minggu, 24 Mei 2026
@@ -127,24 +125,27 @@ const WeddingUnduhMantu = () => {
         </div>
         
         {/* --- SISI KANAN --- */}
-        <div 
-          className={`${isMobile ? 'w-full' : 'md:w-full lg:w-[40%]'} md:flex-1 lg:flex-[1_1_40%] relative bg-cover bg-center lg:bg-right lg:bg-[length:40%] lg:bg-repeat`}
-          style={{ 
-            backgroundImage: 'url(/wedding/bg-undangan.png)',
-            backgroundAttachment: 'fixed',
-            backgroundColor: '#000',
-          }}
-        >
+        <div className={`${isMobile ? 'w-full' : 'md:w-full lg:w-[40%]'} md:flex-1 lg:flex-[1_1_40%] relative text-white bg-black`}>
           
-          {/* PERUBAHAN KRUSIAL: Tambahkan !hideCover di sini */}
-          {!hideCover && (
-            <WeddingCover 
-              namaTamu={namaTamuFormatted} 
-              targetSectionRef={nextSectionRef} 
-              isOpened={isOpened}
-              onOpen={handleOpenInvitation}
-            />
-          )}
+          {/* TRIK "LAYER STICKY" ANTI-BUG iOS (Background Gambar Terpisah) */}
+          <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+            <div 
+              className="sticky top-0 w-full h-[100dvh] bg-no-repeat bg-cover bg-center"
+              style={{ backgroundImage: 'url(/wedding/bg-undangan.png)' }}
+            ></div>
+          </div>
+
+          {/* KONTEN UTAMA (Dibungkus relative z-10 agar berada di atas layer background) */}
+          <div className="relative z-10 w-full">
+            
+            {!hideCover && (
+              <WeddingCover 
+                namaTamu={namaTamuFormatted} 
+                targetSectionRef={nextSectionRef} 
+                isOpened={isOpened}
+                onOpen={handleOpenInvitation}
+              />
+            )}
 
           <div ref={nextSectionRef}>
             <div className={`transition-all duration-[2800ms] ease-in-out ${isOpened ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -170,7 +171,9 @@ const WeddingUnduhMantu = () => {
             <WeddingGift />
             <WeddingRsvpSection namaTamuDefault={namaTamuFormatted} />
             <WeddingClosing />
+            </div>
           </div>
+
         </div>
       </div>
     </>
