@@ -15,7 +15,7 @@ const WeddingHero = ({ isOpened }) => {
   }, [isOpened]);
 
   return (
-    <section className="relative flex flex-col items-center justify-center w-full min-h-screen overflow-hidden text-center text-white bg-black">
+    <section className="relative flex flex-col items-center justify-center w-full min-h-[100dvh] overflow-hidden text-center text-white bg-black">
       
       {/* FOTO 1 (Akan memudar setelah 4 detik) */}
       <div 
@@ -50,7 +50,7 @@ const WeddingHero = ({ isOpened }) => {
           </div>
         </AnimatedSection>
 
-      <div className="absolute flex flex-col items-center z-20 bottom-10 animate-bounce opacity-80">
+      <div className="absolute flex flex-col items-center z-20 bottom-28 md:bottom-12 animate-bounce opacity-80">
         <svg 
           className="w-7 h-7 text-white" 
           fill="none" 
