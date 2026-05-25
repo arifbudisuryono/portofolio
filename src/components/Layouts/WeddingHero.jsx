@@ -45,7 +45,7 @@ const WeddingHero = ({ isOpened }) => {
 
             {/* TANGGAL NGUNDUH MANTU */}
             <p className="font-serif text-sm tracking-widest uppercase text-gray-200">
-              Minggu, 24 Mei 2026
+              Minggu, 07 Juni 2026
             </p>
           </div>
         </AnimatedSection>

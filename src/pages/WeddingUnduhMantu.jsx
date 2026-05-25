@@ -119,7 +119,7 @@ const WeddingUnduhMantu = () => {
           <div className="hidden lg:relative lg:text-left lg:text-white lg:block">
             <h1 style={{ fontFamily: 'serif', fontSize: '4rem', margin: '10px 0' }}>Arif & Indri</h1>
             <p style={{ fontFamily: 'serif', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '1.2rem' }}>
-              Minggu, 24 Mei 2026
+              Minggu, 07 Juni 2026
             </p>
           </div>
         </div>

@@ -33,7 +33,7 @@ const AnimatedRoutes = () => {
           <Route path="*" element={<Notfound />} />
         </Routes>
 
-        <motion.div className="h-screen w-screen fixed bg-black top-0 pointer-events-none" 
+        <motion.div className="h-screen w-screen z-[999] fixed bg-black top-0 pointer-events-none" 
           initial={{opacity: 1,}}
           animate={{opacity: 0,
             transition: {

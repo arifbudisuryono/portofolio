@@ -21,7 +21,7 @@ const PageTransition = ({isAnimating}) => {
   return (
     
         <>
-        <div className="top-0 left-0 right-0 w-screen h-screen fixed z-40 pointer-events-none flex">
+        <div className="top-0 left-0 right-0 w-screen h-screen fixed z-[9999] pointer-events-none flex">
         {[...Array(6)].map((_, index) => (
           <motion.div
             key={index}
