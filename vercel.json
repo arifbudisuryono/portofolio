@@ -1,5 +1,6 @@
 {
     "rewrites": [
+      { "source": "/arif-indri-wedding(.*)", "destination": "/wedding.html" },
       { "source": "/(.*)", "destination": "/index.html" }
     ]
   }
