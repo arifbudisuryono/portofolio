@@ -169,7 +169,7 @@ const WeddingRsvpSection = ({ namaTamuDefault }) => {
                 <span className="flex items-center justify-center gap-2 w-[180px] py-1">
                   {isSubmitting ? 'Mengirim...' : 'Kirim Ucapan'}
                   {!isSubmitting && (
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                    <svg className="w-4 h-4 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
                   )}
                 </span>
               </WeddingButton>
